@@ -130,7 +130,9 @@ class NestedSet extends Tree
      */
     public function getRootNode()
     {
-        return $this->getNode('1001');
+        $this->sort();
+        reset($this->nodes);
+        return current($this->nodes);
     }
 
     /**
@@ -141,6 +143,7 @@ class NestedSet extends Tree
      */
     public function convert()
     {
+        $this->setLevels();
         reset($this->nodes);
         $tree = self::convertToAdjacencyList($this->nodes);
         

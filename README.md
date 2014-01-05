@@ -21,6 +21,57 @@ This library is still in beta. Most of the functionality works, but still needs 
 * Add, move, delete node functionality. Need to experiment with this a bit to optimize speed.
 * Add some unit testing
 
+### Basic Example ###
+
+```php
+<?php
+
+include 'vendor/autoload.php';
+
+$sample = array(
+    array(
+        'id' => 1005,
+        'left' => 7,
+        'right' => 8
+    ),
+	array(
+		'id' => 1001,
+		'left' => 1,
+		'right' => 12
+	),
+	array(
+		'id' => 1002,
+		'left' => 2,
+		'right' => 9
+	),
+	array(
+		'id' => 1003,
+		'left' => 3,
+		'right' => 4
+	),
+	array(
+		'id' => 1004,
+		'left' => 5,
+		'right' => 6
+	),
+);
+
+// Create a nested set from the sample data, which contains some loose left and right domains
+$nested_set = Tree\NestedSet\NestedSet::fromArray($sample);
+$nested_set->tighten();
+
+// You now have an adjacency list from your nested set
+$adjacency_list = $nested_set->convert();
+
+// You can do the same with your adjacency list and convert it to a nested set
+$nested_set2 = $adjacency_list->convert();
+
+// Let's see how our trees look back in array format
+var_dump($adjacency_list->toArray());
+var_dump($nested_set->toArray());
+
+```
+
 ## LICENSE ##
 The MIT License (MIT)
 

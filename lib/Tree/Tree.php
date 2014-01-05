@@ -91,31 +91,4 @@ abstract class Tree
     {
         $this->nodes = $nodes;    
     }
-    
-    /**
-     * This method is converts one type of tree to another
-     *
-     * @param \Tree\Tree::NESTED_SET|\Tree\Tree::ADJACENCY_LIST $type  
-     * @access public
-     * @return \Tree\AdjacencyList\AdjacencyList|\Tree\NestedSet\NestedSet
-     */
-    public function convert()
-    {
-        if ($this instanceof \Tree\NestedSet\NestedSet) {
-            $tree = new AdjacencyList();
-            $type = Tree::ADJACENCY_LIST;
-        } elseif ($this instanceof \Tree\AdjacencyList\AdjacencyList) {
-            $tree = new NestedSet();
-            $type = Tree::NESTED_SET;
-        } else {
-            return false;
-        }
-        
-        $ids = array_keys($this->nodes);
-        foreach ($ids as $id) {
-            $tree->nodes[$id] = new \Tree\AdjacencyList\Node($id, null);
-        }
-        
-        return $tree;
-    }
 }
