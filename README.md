@@ -56,8 +56,11 @@ $sample = array(
 	),
 );
 
-// Create a nested set from the sample data, which contains some loose left and right domains
+// Create a nested set from the sample data
 $nested_set = Tree\NestedSet\NestedSet::fromArray($sample);
+
+// The sample data contains some loose left and right domains, let's tighten it up
+// NOTE: This method does not do the impossible. If your tree is corrupted, this method won't help.
 $nested_set->tighten();
 
 // You now have an adjacency list from your nested set
