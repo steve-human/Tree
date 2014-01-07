@@ -11,7 +11,6 @@ class AdjacencyList extends Tree
      * Set a new node
      *
      * @param \Tree\AdjacencyList\Node $node
-     * @access public
      */
     public function setNode(Node $node)
     {
@@ -20,8 +19,6 @@ class AdjacencyList extends Tree
     
     /**
      * @param array $data
-     * @static
-     * @access public
      * @return Tree\Tree
      */
     public static function fromArray($data)
@@ -36,7 +33,9 @@ class AdjacencyList extends Tree
     }
 
     /**
-     * @see \Tree\Tree::convert()
+     * Calls ::convertToNestedSet
+     * 
+     * @return \Tree\NestedSet\NestedSet
      */
     public function convert()
     {
@@ -53,7 +52,6 @@ class AdjacencyList extends Tree
      * @param number $parent
      * @param number $left
      * @param number $level
-     * @access private
      * @return number
      */
     private static function convertToNestedSet(&$nodes)

@@ -25,8 +25,6 @@ class Node extends \Tree\Node
      * Returns a node from the array provided
      *
      * @param array $data
-     * @static
-     * @access public
      * @return boolean|\Tree\AdjacencyList\Node
      */
     public static function fromArray($data)
@@ -47,7 +45,6 @@ class Node extends \Tree\Node
     /**
      * Return properties in a flat array
      *
-     * @access public
      * @return array
      */
     public function toArray()
@@ -73,7 +70,6 @@ class Node extends \Tree\Node
      *
      * @param number $parent_id            
      *
-     * @access public
      */
     public function setParentId($parent_id)
     {

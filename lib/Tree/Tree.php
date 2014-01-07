@@ -36,7 +36,6 @@ abstract class Tree
     /**
      * Constructor method
      * 
-     * @access public
      */
     public function __construct()
     {
@@ -49,7 +48,6 @@ abstract class Tree
     /**
      * Returns a representation of this tree as a flat array
      *
-     * @access public
      * @return array
      */
     public function toArray()
@@ -66,8 +64,8 @@ abstract class Tree
      * Returns node based on id passed
      *
      * @param number $id
-     * @access public
-     * @return Node $node
+     * 
+     * @return \Tree\Tree\Node $node
      */
     public function getNode($id)
     {
@@ -82,11 +80,21 @@ abstract class Tree
         return $this->nodes[$id];
     }
 
+    /**
+     * Returns tree nodes 
+     * 
+     * @return array An Array of \Tree\Tree\Node types
+     */
     public function getNodes()
     {
         return $this->nodes;
     }
     
+    /**
+     * Set tree nodes
+     * 
+     * @param array $nodes An array of \Tree\Tree\Node types
+     */
     public function setNodes($nodes) 
     {
         $this->nodes = $nodes;    

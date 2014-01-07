@@ -32,8 +32,7 @@ class Node extends \Tree\Node
      * Returns a node from the array provided
      * 
      * @param array $data
-     * @static
-     * @access public
+     * 
      * @return boolean|\Tree\NestedSet\Node
      */
     public static function fromArray($data)
@@ -55,7 +54,6 @@ class Node extends \Tree\Node
     /**
      * Return properties in a scalar array
      *
-     * @access public
      * @return array
      */
     public function toArray()
@@ -79,7 +77,6 @@ class Node extends \Tree\Node
     /**
      * Getter for left domain
      *
-     * @access public
      * @return number
      */
     public function getLeft()
@@ -90,7 +87,6 @@ class Node extends \Tree\Node
     /**
      * Getter for right domain
      *
-     * @access public
      * @return number
      */
     public function getRight()
@@ -102,7 +98,6 @@ class Node extends \Tree\Node
      * Setter for left domain
      *
      * @param number $left
-     * @access public
      */
     public function setLeft($left)
     {
@@ -113,7 +108,6 @@ class Node extends \Tree\Node
      * Setter for right domain
      *
      * @param number $right
-     * @access public
      */
     public function setRight($right)
     {

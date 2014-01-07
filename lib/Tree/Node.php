@@ -29,7 +29,6 @@ abstract class Node
      *
      * @param number $id
      *
-     * @access public
      */
     public function setId($id)
     {
@@ -39,7 +38,6 @@ abstract class Node
     /**
      * Getter for node level
      *
-     * @access public
      * @return number
      */
     public function getLevel()
@@ -51,7 +49,6 @@ abstract class Node
      * Setter for node level
      *
      * @param number $level
-     * @access public
      */
     public function setLevel($level)
     {

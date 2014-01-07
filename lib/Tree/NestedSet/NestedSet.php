@@ -11,7 +11,6 @@ class NestedSet extends Tree
      * Set a new node
      *
      * @param \Tree\NestedSet\Node $node
-     * @access public
      */
     public function setNode(Node $node)
     {
@@ -20,8 +19,7 @@ class NestedSet extends Tree
     
     /**
      * @param array $data
-     * @static
-     * @access public
+     * 
      * @return Tree\Tree
      */
     public static function fromArray($data)
@@ -38,7 +36,6 @@ class NestedSet extends Tree
     /**
      * Clear out all the nodes of the tree
      * 
-     * @access public
      */
     public function clear()
     {
@@ -50,7 +47,7 @@ class NestedSet extends Tree
      * 
      * @param number|\Tree\NestedSet\Node $parent
      * @param boolean $include_child
-     * @access public
+     * 
      * @return array 
      */
     public function getAncestors($child)
@@ -76,7 +73,7 @@ class NestedSet extends Tree
      * 
      * @param number|\Tree\NestedSet\Node $parent
      * @param boolean $include_parent
-     * @access public
+     * 
      * @return array 
      */
     public function getDescendants($parent, $include_parent = false)
@@ -101,7 +98,6 @@ class NestedSet extends Tree
     /**
      * Sort all the nodes by their left domain
      * 
-     * @access public
      */
     public function sort()
     {
@@ -113,8 +109,7 @@ class NestedSet extends Tree
      * 
      * @param \Tree\NestedSet\Node $a
      * @param \Tree\NestedSet\Node $b
-     * @static
-     * @access public
+     * 
      * @return number
      */
     public static function sortLeft($a, $b) 
@@ -125,7 +120,6 @@ class NestedSet extends Tree
     /**
      * Return the root node
      * 
-     * @access public
      * @return \Tree\NestedSet\Node
      */
     public function getRootNode()
@@ -138,7 +132,6 @@ class NestedSet extends Tree
     /**
      * Convert this nested set to an adjacency list
      * 
-     * @access public
      * @return \Tree\AdjacencyList\AdjacencyList
      */
     public function convert()
@@ -155,8 +148,7 @@ class NestedSet extends Tree
      * 
      * @param array $nodes
      * @param \Tree\NestedSet\Node $p
-     * @static
-     * @access private
+     * 
      * @return \Tree\AdjacencyList\AdjacencyList
      */
     private static function convertToAdjacencyList(&$nodes, &$p = null)
@@ -214,7 +206,6 @@ class NestedSet extends Tree
      * the case, we need to store it in the object in order to make use of other methods
      * such as converting the tree to an adjacency list
      * 
-     * @access public
      */
     public function setLevels()
     {
@@ -226,8 +217,6 @@ class NestedSet extends Tree
      * Iterate through the tree to set the level property for each node
      * 
      * @param \Tree\NestedSet\NestedSet $tree
-     * @static
-     * @access private
      */
     private static function setNodeLevelsRecursively(&$tree)
     {
@@ -267,7 +256,6 @@ class NestedSet extends Tree
      * larger than it should. This method will tighten and fix this issue, but only
      * if the tree's integrity is still in tact.
      * 
-     * @access public
      */
     public function tighten()
     {
@@ -282,8 +270,7 @@ class NestedSet extends Tree
      * Iterate through the tree to tighten up the left and right domains
      * 
      * @param \Tree\NestedSet\NestedSet $tree
-     * @static
-     * @access private
+     * 
      * @return \Tree\NestedSet\NestedSet
      */
     private static function tightenRecursively(&$tree = null)
